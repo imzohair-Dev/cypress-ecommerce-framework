@@ -1,14 +1,6 @@
 # 🛡️ Production-Grade E-commerce Test Automation Framework
 
-![Cypress v13+](https://img.shields.io/badge/Cypress-v13+-00C853?logo=cypress&logoColor=white) 
-![JavaScript](https://img.shields.io/badge/Language-JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
-
 > **"Helping e-commerce businesses reduce revenue loss by ensuring a bug-free shopping experience."**
-
-This is a **Senior-level QA Automation Framework** built using Cypress, designed for high-scale e-commerce platforms. It utilizes [Ecommerce Playground](https://ecommerce-playground.lambdatest.io/) as a stable, modern target to simulate real-world user journeys and validate critical business logic from the front-end to the API layer.
-
----
 
 ## 🚀 Why This Project Matters
 In e-commerce, **one broken checkout step can cost millions.** This framework is engineered to:
@@ -84,11 +76,3 @@ As a Senior QA Automation Architect, I don't just "write tests"—I build qualit
 ✅ **Reduced QA Bottlenecks:** My frameworks are designed for speed and parallel execution, enabling faster deployment cycles.  
 ✅ **Actionable Insights:** Professional reporting ensures stakeholders and developers understand failures instantly.  
 ✅ **Shift-Left Testing:** Expertise in API and component-level testing to catch bugs before they reach the UI.
-
-**Interested in improving your project's quality?**  
-📩 **[Get in Touch](mailto:your-email@example.com)** | 🔗 **[LinkedIn](https://linkedin.com/in/your-profile)**
-
----
-
-## 📜 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
