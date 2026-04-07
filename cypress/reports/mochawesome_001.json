@@ -1,0 +1,130 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-04-03T20:22:40.995Z",
+    "end": "2026-04-03T20:22:42.744Z",
+    "duration": 1749,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "84390ac6-4d14-4b10-8cfe-b119ac5ff851",
+      "title": "",
+      "fullFile": "cypress\\e2e\\catalog\\shopping.cy.js",
+      "file": "cypress\\e2e\\catalog\\shopping.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "867ed5cb-1226-46f2-8214-6a265c15f929",
+          "title": "Shopping & Catalog",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should search for a product and filter results",
+              "fullTitle": "Shopping & Catalog should search for a product and filter results",
+              "timedOut": null,
+              "duration": 547,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_ProductPage.default.search(searchTerm);\ncy.get(\".base\").should(\"contain\", `Search results for: '${searchTerm}'`);\ncy.get(\".product-item-link\").first().should(\"contain\", searchTerm);",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://magento.softwaretestingboard.com/\n\nThe response we received from your web server was:\n\n  > 526: Unknown Status Code\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Shopping & Catalog`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://magento.softwaretestingboard.com/\n\nThe response we received from your web server was:\n\n  > 526: Unknown Status Code\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Shopping & Catalog`\n    at <unknown> (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:131049:76)\n    at visitFailedByErr (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:130463:12)\n    at <unknown> (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:131032:13)\n    at tryCatcher (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-ecommerce-automation-framework/./cypress/e2e/catalog/shopping.cy.js:7:7)",
+                "diff": null
+              },
+              "uuid": "1157b386-e3f4-4db0-ba5a-9258e6702527",
+              "parentUUID": "867ed5cb-1226-46f2-8214-6a265c15f929",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add a product to the cart from the search page",
+              "fullTitle": "Shopping & Catalog should add a product to the cart from the search page",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_ProductPage.default.search(searchTerm);\n_ProductPage.default.selectProduct(0);\n_ProductPage.default.addToCart(\"M\", \"White\");\n_ProductPage.default.getSuccessMessage().should(\"be.visible\").and(\"contain\", `You added ${searchTerm} to your shopping cart.`);\ncy.get(\".counter-number\").should(\"not.have.text\", \"0\");",
+              "err": {},
+              "uuid": "722452cd-8219-4c04-830e-4ee18367f543",
+              "parentUUID": "867ed5cb-1226-46f2-8214-6a265c15f929",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "1157b386-e3f4-4db0-ba5a-9258e6702527"
+          ],
+          "pending": [],
+          "skipped": [
+            "722452cd-8219-4c04-830e-4ee18367f543"
+          ],
+          "duration": 547,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

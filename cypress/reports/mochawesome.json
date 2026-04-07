@@ -1,0 +1,149 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-04-03T20:22:37.117Z",
+    "end": "2026-04-03T20:22:39.393Z",
+    "duration": 2276,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "f5ca6313-72da-406e-93c5-d30dd5b26173",
+      "title": "",
+      "fullFile": "cypress\\e2e\\api\\api.cy.js",
+      "file": "cypress\\e2e\\api\\api.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b6731017-6c12-433c-8f89-11965314be20",
+          "title": "API Interception & Request Validation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should intercept the search suggestion API call",
+              "fullTitle": "API Interception & Request Validation should intercept the search suggestion API call",
+              "timedOut": null,
+              "duration": 447,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Intercept the search suggestion request\ncy.intercept(\"GET\", \"**/search/ajax/suggest**\").as(\"searchSuggestions\");\n// Type in the search box\ncy.get(\"#search\").type(\"Breathe\");\n// Wait for the API call and validate the response\ncy.wait(\"@searchSuggestions\").then(interception => {\n  expect(interception.response.statusCode).to.eq(200);\n  expect(interception.request.url).to.include(\"q=Breathe\");\n});",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://magento.softwaretestingboard.com/\n\nThe response we received from your web server was:\n\n  > 526: Unknown Status Code\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `API Interception & Request ...`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://magento.softwaretestingboard.com/\n\nThe response we received from your web server was:\n\n  > 526: Unknown Status Code\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `API Interception & Request ...`\n    at <unknown> (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:131049:76)\n    at visitFailedByErr (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:130463:12)\n    at <unknown> (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:131032:13)\n    at tryCatcher (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-ecommerce-automation-framework/./cypress/e2e/api/api.cy.js:3:7)",
+                "diff": null
+              },
+              "uuid": "758f690b-b5e1-4993-9040-58fe9a5d6412",
+              "parentUUID": "b6731017-6c12-433c-8f89-11965314be20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should validate the cart summary API response",
+              "fullTitle": "API Interception & Request Validation should validate the cart summary API response",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Intercept the cart summary request\ncy.intercept(\"GET\", \"**/customer/section/load/**?sections=cart**\").as(\"getCartSummary\");\n// Refresh or visit page to trigger cart load\ncy.reload();\ncy.wait(\"@getCartSummary\").then(interception => {\n  expect(interception.response.statusCode).to.eq(200);\n  expect(interception.response.body).to.have.property(\"cart\");\n});",
+              "err": {},
+              "uuid": "f135e8f2-a7d8-4e76-928a-4dc4b5ee8108",
+              "parentUUID": "b6731017-6c12-433c-8f89-11965314be20",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should verify product data via direct API request",
+              "fullTitle": "API Interception & Request Validation should verify product data via direct API request",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Using cy.request for backend validation (demonstrating API testing skills)\ncy.request({\n  method: \"GET\",\n  url: \"/rest/V1/products?searchCriteria[filterGroups][0][filters][0][field]=name&searchCriteria[filterGroups][0][filters][0][value]=Breathe-Easy Tank&searchCriteria[filterGroups][0][filters][0][conditionType]=eq\",\n  failOnStatusCode: false\n}).then(response => {\n  // Some sites might return 401 without auth, but we demonstrate the approach\n  if (response.status === 200) {\n    expect(response.body).to.have.property(\"items\");\n    expect(response.body.items[0].name).to.include(\"Breathe-Easy Tank\");\n  } else {\n    cy.log(\"API access restricted without token, but request captured.\");\n  }\n});",
+              "err": {},
+              "uuid": "e69732c7-801b-458d-bc93-1e68fcfb6ad1",
+              "parentUUID": "b6731017-6c12-433c-8f89-11965314be20",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "758f690b-b5e1-4993-9040-58fe9a5d6412"
+          ],
+          "pending": [],
+          "skipped": [
+            "f135e8f2-a7d8-4e76-928a-4dc4b5ee8108",
+            "e69732c7-801b-458d-bc93-1e68fcfb6ad1"
+          ],
+          "duration": 447,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

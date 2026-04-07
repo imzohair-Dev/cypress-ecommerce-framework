@@ -1,0 +1,133 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2026-04-03T20:22:44.332Z",
+    "end": "2026-04-03T20:22:47.878Z",
+    "duration": 3546,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9fa9a76e-44e6-40c3-91a1-4cff276dcc83",
+      "title": "",
+      "fullFile": "cypress\\e2e\\auth\\auth.cy.js",
+      "file": "cypress\\e2e\\auth\\auth.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "24213e72-b800-418e-a2f9-16f84087f3c3",
+          "title": "User Authentication & Registration",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should successfully register a new user",
+              "fullTitle": "User Authentication & Registration should successfully register a new user",
+              "timedOut": null,
+              "duration": 560,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_RegisterPage.default.visit();\n_RegisterPage.default.register(user);\ncy.url().should(\"include\", \"customer/account\");\ncy.get(\".message-success\").should(\"contain\", \"Thank you for registering\");",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://magento.softwaretestingboard.com/customer/account/create/\n\nThe response we received from your web server was:\n\n  > 526: Unknown Status Code\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://magento.softwaretestingboard.com/customer/account/create/\n\nThe response we received from your web server was:\n\n  > 526: Unknown Status Code\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n    at <unknown> (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:131049:76)\n    at visitFailedByErr (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:130463:12)\n    at <unknown> (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:131032:13)\n    at tryCatcher (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at RegisterPage.visit (webpack://cypress-ecommerce-automation-framework/./cypress/pages/BasePage.js:3:7)\n    at RegisterPage.visit (webpack://cypress-ecommerce-automation-framework/./cypress/pages/RegisterPage.js:15:10)\n    at Context.eval (webpack://cypress-ecommerce-automation-framework/./cypress/e2e/auth/auth.cy.js:13:17)",
+                "diff": null
+              },
+              "uuid": "93ec1012-375f-47ee-b803-2c0f941888bc",
+              "parentUUID": "24213e72-b800-418e-a2f9-16f84087f3c3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should fail to login with invalid credentials",
+              "fullTitle": "User Authentication & Registration should fail to login with invalid credentials",
+              "timedOut": null,
+              "duration": 590,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.visit();\n_LoginPage.default.login(\"invalid@email.com\", \"wrongpassword\");\n_LoginPage.default.getErrorMessage().should(\"be.visible\").and(\"contain\", \"The account sign-in was incorrect\");",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://magento.softwaretestingboard.com/customer/account/login/\n\nThe response we received from your web server was:\n\n  > 526: Unknown Status Code\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://magento.softwaretestingboard.com/customer/account/login/\n\nThe response we received from your web server was:\n\n  > 526: Unknown Status Code\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n    at <unknown> (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:131049:76)\n    at visitFailedByErr (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:130463:12)\n    at <unknown> (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:131032:13)\n    at tryCatcher (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at LoginPage.visit (webpack://cypress-ecommerce-automation-framework/./cypress/pages/BasePage.js:3:7)\n    at LoginPage.visit (webpack://cypress-ecommerce-automation-framework/./cypress/pages/LoginPage.js:13:10)\n    at Context.eval (webpack://cypress-ecommerce-automation-framework/./cypress/e2e/auth/auth.cy.js:20:14)",
+                "diff": null
+              },
+              "uuid": "fd0bb2f2-d798-4d8b-b527-60942437294b",
+              "parentUUID": "24213e72-b800-418e-a2f9-16f84087f3c3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "93ec1012-375f-47ee-b803-2c0f941888bc",
+            "fd0bb2f2-d798-4d8b-b527-60942437294b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1150,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

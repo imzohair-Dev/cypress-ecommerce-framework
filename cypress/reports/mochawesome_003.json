@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-04-03T20:22:49.474Z",
+    "end": "2026-04-03T20:22:51.371Z",
+    "duration": 1897,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "617264aa-8c42-457d-989a-668968b80db8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\checkout\\checkout.cy.js",
+      "file": "cypress\\e2e\\checkout\\checkout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ecae6358-d218-4fe9-a53a-c14005b4ea14",
+          "title": "Checkout Process (E2E)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should complete a full checkout as a guest",
+              "fullTitle": "Checkout Process (E2E) should complete a full checkout as a guest",
+              "timedOut": null,
+              "duration": 612,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Add product to cart\ncy.visit(\"/\");\n_ProductPage.default.search(\"Breathe-Easy Tank\");\n_ProductPage.default.selectProduct(0);\n_ProductPage.default.addToCart();\n// Wait for the cart counter to update\ncy.get(\".counter-number\", {\n  timeout: 10000\n}).should(\"not.have.text\", \"0\");\n// 2. Go to checkout\ncy.get(\".action.showcart\").click();\ncy.get(\"#top-cart-btn-checkout\").click();\n// 3. Fill shipping information\n// Wait for checkout page to load\ncy.url().should(\"include\", \"checkout/#shipping\");\n_CheckoutPage.default.fillShippingAddress(user);\n// 4. Select shipping method\n_CheckoutPage.default.selectShippingMethod(0);\n_CheckoutPage.default.proceedToPayment();\n// 5. Place order\ncy.url().should(\"include\", \"checkout/#payment\");\n// Ensure the place order button is visible and interactable\ncy.get(\".payment-method._active .action.primary.checkout\").click();\n// 6. Verify order confirmation\n_CheckoutPage.default.getOrderSuccessMessage().should(\"be.visible\").and(\"contain\", \"Thank you for your purchase!\");\n_CheckoutPage.default.getOrderNumber().then(orderId => {\n  cy.log(`Order placed successfully: ${orderId.text()}`);\n});",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://magento.softwaretestingboard.com/\n\nThe response we received from your web server was:\n\n  > 526: Unknown Status Code\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://magento.softwaretestingboard.com/\n\nThe response we received from your web server was:\n\n  > 526: Unknown Status Code\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n    at <unknown> (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:131049:76)\n    at visitFailedByErr (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:130463:12)\n    at <unknown> (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:131032:13)\n    at tryCatcher (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://magento.softwaretestingboard.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-ecommerce-automation-framework/./cypress/e2e/checkout/checkout.cy.js:19:7)",
+                "diff": null
+              },
+              "uuid": "cbe5411e-79a5-41b7-a25a-942a46524e04",
+              "parentUUID": "ecae6358-d218-4fe9-a53a-c14005b4ea14",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "cbe5411e-79a5-41b7-a25a-942a46524e04"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 612,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
